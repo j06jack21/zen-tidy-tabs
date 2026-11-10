@@ -1,0 +1,37 @@
+.pinned-tabs-container-separator .zen-tidy-tabs-button {
+  & .toolbarbutton-icon {
+    display: none;
+  }
+
+  &[tidy-state="busy"],
+  &[tidy-state="undo"],
+  &[tidy-state="error"] {
+    pointer-events: auto;
+    background-image: none;
+
+    & .toolbarbutton-text {
+      opacity: 1 !important;
+    }
+  }
+
+  &[tidy-state="busy"] {
+    pointer-events: none;
+  }
+
+  &[tidy-state="busy"] .toolbarbutton-text {
+    animation: zen-tidy-pulse 1s ease-in-out infinite alternate;
+  }
+
+  &[tidy-state="error"] .toolbarbutton-text {
+    color: light-dark(#b42318, #ff8a80);
+  }
+}
+
+@keyframes zen-tidy-pulse {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}

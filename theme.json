@@ -1,0 +1,20 @@
+{
+  "id": "zen-tidy-tabs",
+  "name": "Zen Tidy Tabs",
+  "description": "Arc-style Tidy Tabs for Zen: groups loose tabs by topic into folders using AI (Ollama, Gemini, Claude, or any OpenAI-compatible API).",
+  "author": "Jackson",
+  "version": "0.1.0",
+  "style": {
+    "chrome": "chrome.css"
+  },
+  "scripts": {
+    "tidy-tabs.uc.js": {
+      "include": ["chrome://browser/content/browser.xhtml"]
+    }
+  },
+  "supportsUnload": true,
+  "preferences": "preferences.json",
+  "readme": "README.md",
+  "tags": ["tabs", "folders", "ai", "arc"],
+  "fork": ["zen"]
+}

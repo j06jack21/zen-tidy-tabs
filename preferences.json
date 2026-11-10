@@ -1,0 +1,301 @@
+[
+  {
+    "type": "separator",
+    "label": "Grouping",
+    "id": "sep-grouping"
+  },
+  {
+    "property": "tidy-tabs.provider",
+    "label": "How to group tabs",
+    "type": "dropdown",
+    "placeholder": false,
+    "defaultValue": "ollama",
+    "options": [
+      {
+        "value": "ollama",
+        "label": "AI: Ollama (local, free)"
+      },
+      {
+        "value": "gemini",
+        "label": "AI: Gemini API"
+      },
+      {
+        "value": "anthropic",
+        "label": "AI: Claude API"
+      },
+      {
+        "value": "openai",
+        "label": "AI: OpenAI-compatible (OpenAI, LM Studio, OpenRouter…)"
+      },
+      {
+        "value": "domain",
+        "label": "No AI: group by website"
+      }
+    ]
+  },
+  {
+    "property": "tidy-tabs.mode",
+    "label": "What Tidy does",
+    "type": "dropdown",
+    "placeholder": false,
+    "defaultValue": "folders",
+    "options": [
+      {
+        "value": "folders",
+        "label": "Move groups into folders (tabs become pinned)"
+      },
+      {
+        "value": "sort",
+        "label": "Sort only (reorder, tabs stay unpinned)"
+      }
+    ]
+  },
+  {
+    "property": "tidy-tabs.min-group-size",
+    "label": "Minimum tabs per new group",
+    "type": "string",
+    "value": "number",
+    "defaultValue": "2",
+    "placeholder": "2"
+  },
+  {
+    "property": "tidy-tabs.reuse-existing-folders",
+    "label": "Add tabs to existing folders when the topic matches",
+    "type": "checkbox",
+    "defaultValue": true
+  },
+  {
+    "property": "tidy-tabs.collapse-new-folders",
+    "label": "Collapse new folders",
+    "type": "checkbox",
+    "defaultValue": false
+  },
+  {
+    "property": "tidy-tabs.fallback-to-domain",
+    "label": "If AI fails, fall back to grouping by website",
+    "type": "checkbox",
+    "defaultValue": true
+  },
+  {
+    "property": "tidy-tabs.custom-instructions",
+    "label": "Extra instructions for the AI (optional)",
+    "type": "string",
+    "placeholder": "e.g. keep course tabs together by class code"
+  },
+  {
+    "type": "separator",
+    "label": "Triggers",
+    "id": "sep-triggers"
+  },
+  {
+    "property": "tidy-tabs.shortcut",
+    "label": "Keyboard shortcut (accel = Cmd on macOS, Ctrl elsewhere)",
+    "type": "string",
+    "defaultValue": "alt+shift+t",
+    "placeholder": "alt+shift+t"
+  },
+  {
+    "property": "tidy-tabs.auto-tidy",
+    "label": "Auto-tidy when loose tabs pile up",
+    "type": "checkbox",
+    "defaultValue": false
+  },
+  {
+    "property": "tidy-tabs.auto-threshold",
+    "label": "Auto-tidy at this many loose tabs",
+    "type": "string",
+    "value": "number",
+    "defaultValue": "10",
+    "placeholder": "10",
+    "conditions": [
+      {
+        "if": {
+          "property": "tidy-tabs.auto-tidy",
+          "value": true
+        }
+      }
+    ]
+  },
+  {
+    "type": "separator",
+    "label": "Ollama",
+    "id": "sep-ollama",
+    "conditions": [
+      {
+        "if": {
+          "property": "tidy-tabs.provider",
+          "value": "ollama"
+        }
+      }
+    ]
+  },
+  {
+    "property": "tidy-tabs.ollama.url",
+    "label": "Ollama URL",
+    "type": "string",
+    "defaultValue": "http://localhost:11434",
+    "placeholder": "http://localhost:11434",
+    "conditions": [
+      {
+        "if": {
+          "property": "tidy-tabs.provider",
+          "value": "ollama"
+        }
+      }
+    ]
+  },
+  {
+    "property": "tidy-tabs.ollama.model",
+    "label": "Ollama model",
+    "type": "string",
+    "defaultValue": "llama3.2",
+    "placeholder": "llama3.2",
+    "conditions": [
+      {
+        "if": {
+          "property": "tidy-tabs.provider",
+          "value": "ollama"
+        }
+      }
+    ]
+  },
+  {
+    "type": "separator",
+    "label": "Gemini",
+    "id": "sep-gemini",
+    "conditions": [
+      {
+        "if": {
+          "property": "tidy-tabs.provider",
+          "value": "gemini"
+        }
+      }
+    ]
+  },
+  {
+    "property": "tidy-tabs.gemini.key",
+    "label": "Gemini API key",
+    "type": "string",
+    "placeholder": "AIza…",
+    "conditions": [
+      {
+        "if": {
+          "property": "tidy-tabs.provider",
+          "value": "gemini"
+        }
+      }
+    ]
+  },
+  {
+    "property": "tidy-tabs.gemini.model",
+    "label": "Gemini model",
+    "type": "string",
+    "defaultValue": "gemini-3.5-flash-lite",
+    "placeholder": "gemini-3.5-flash-lite",
+    "conditions": [
+      {
+        "if": {
+          "property": "tidy-tabs.provider",
+          "value": "gemini"
+        }
+      }
+    ]
+  },
+  {
+    "type": "separator",
+    "label": "Claude",
+    "id": "sep-anthropic",
+    "conditions": [
+      {
+        "if": {
+          "property": "tidy-tabs.provider",
+          "value": "anthropic"
+        }
+      }
+    ]
+  },
+  {
+    "property": "tidy-tabs.anthropic.key",
+    "label": "Anthropic API key",
+    "type": "string",
+    "placeholder": "sk-ant-…",
+    "conditions": [
+      {
+        "if": {
+          "property": "tidy-tabs.provider",
+          "value": "anthropic"
+        }
+      }
+    ]
+  },
+  {
+    "property": "tidy-tabs.anthropic.model",
+    "label": "Claude model",
+    "type": "string",
+    "defaultValue": "claude-haiku-5-5",
+    "placeholder": "claude-haiku-5-5",
+    "conditions": [
+      {
+        "if": {
+          "property": "tidy-tabs.provider",
+          "value": "anthropic"
+        }
+      }
+    ]
+  },
+  {
+    "type": "separator",
+    "label": "OpenAI-compatible",
+    "id": "sep-openai",
+    "conditions": [
+      {
+        "if": {
+          "property": "tidy-tabs.provider",
+          "value": "openai"
+        }
+      }
+    ]
+  },
+  {
+    "property": "tidy-tabs.openai.url",
+    "label": "Base URL (ends in /v1)",
+    "type": "string",
+    "defaultValue": "https://api.openai.com/v1",
+    "placeholder": "https://api.openai.com/v1",
+    "conditions": [
+      {
+        "if": {
+          "property": "tidy-tabs.provider",
+          "value": "openai"
+        }
+      }
+    ]
+  },
+  {
+    "property": "tidy-tabs.openai.key",
+    "label": "API key (blank for local servers)",
+    "type": "string",
+    "conditions": [
+      {
+        "if": {
+          "property": "tidy-tabs.provider",
+          "value": "openai"
+        }
+      }
+    ]
+  },
+  {
+    "property": "tidy-tabs.openai.model",
+    "label": "Model name",
+    "type": "string",
+    "placeholder": "required",
+    "conditions": [
+      {
+        "if": {
+          "property": "tidy-tabs.provider",
+          "value": "openai"
+        }
+      }
+    ]
+  }
+]
